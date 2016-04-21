@@ -1,5 +1,8 @@
 package nwo.stqa.sandbox;
 
+/**
+ * Created by user on 4/14/2016.
+ */
 public class Square {
 
   public double l;
