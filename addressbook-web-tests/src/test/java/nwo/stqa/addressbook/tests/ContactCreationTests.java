@@ -1,5 +1,6 @@
-package nwo.stqa.addressbook;
+package nwo.stqa.addressbook.tests;
 
+import nwo.stqa.addressbook.model.ContactData;
 import org.testng.annotations.Test;
 
 public class ContactCreationTests extends TestBase {

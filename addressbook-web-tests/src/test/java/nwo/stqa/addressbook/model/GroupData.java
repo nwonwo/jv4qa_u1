@@ -1,4 +1,4 @@
-package nwo.stqa.addressbook;
+package nwo.stqa.addressbook.model;
 
 public class GroupData {
   private final String name;

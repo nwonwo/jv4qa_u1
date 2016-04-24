@@ -1,6 +1,8 @@
-package nwo.stqa.addressbook;
+package nwo.stqa.addressbook.tests;
 
+import nwo.stqa.addressbook.model.GroupData;
 import org.testng.annotations.Test;
+
 public class GroupCreationTests extends TestBase {
 
   @Test

@@ -1,8 +1,8 @@
-package nwo.stqa.addressbook;
+package nwo.stqa.addressbook.tests;
 
 import org.testng.annotations.Test;
 
-public class testGroupDeletion extends TestBase {
+public class GroupDeletionTests extends TestBase {
 
   @Test
   public void testGroupDeletion() {
