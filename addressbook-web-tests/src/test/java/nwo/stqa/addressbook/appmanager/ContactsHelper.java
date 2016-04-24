@@ -7,11 +7,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class ContactsHelper {
   private FirefoxDriver wd;
-  private final ContactsBaseHelper contactsBaseHelper;
 
   public ContactsHelper(FirefoxDriver wd) {
     this.wd = wd;
-    contactsBaseHelper = new ContactsBaseHelper(wd);
   }
 
   public void submitContactCreation() {
@@ -19,21 +17,21 @@ public class ContactsHelper {
   }
 
   public void fillContacForm(ContactData contactData) {
-    contactsBaseHelper.selectFirstName();
-    contactsBaseHelper.setFirstName(contactData);
-    contactsBaseHelper.selectLastName();
-    contactsBaseHelper.setLastName(contactData);
-    contactsBaseHelper.selectAddress();
-    contactsBaseHelper.setAddress(contactData);
-    contactsBaseHelper.selectMobile();
-    contactsBaseHelper.setMobile(contactData);
+    wd.findElement(By.name("firstname")).click();
+    wd.findElement(By.name("firstname")).clear();
+    wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
+    wd.findElement(By.name("lastname")).click();
+    wd.findElement(By.name("lastname")).clear();
+    wd.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
+    wd.findElement(By.name("address")).click();
+    wd.findElement(By.name("address")).clear();
+    wd.findElement(By.name("address")).sendKeys(contactData.getAddress());
+    wd.findElement(By.name("mobile")).click();
+    wd.findElement(By.name("mobile")).clear();
+    wd.findElement(By.name("mobile")).sendKeys(contactData.getMobile());
   }
 
   public void initCreateContact() {
     wd.findElement(By.linkText("add new")).click();
-  }
-
-  public ContactsBaseHelper getContactsBaseHelper() {
-    return contactsBaseHelper;
   }
 }
