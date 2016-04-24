@@ -10,14 +10,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
 
 public class testContactCreation {
-    FirefoxDriver wd;
+  FirefoxDriver wd;
 
-    @BeforeMethod
-    public void setUp() throws Exception {
-        wd = new FirefoxDriver();
-        wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-      login("admin", "secret");
-    }
+  @BeforeMethod
+  public void setUp() throws Exception {
+    wd = new FirefoxDriver();
+    wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    login("admin", "secret");
+  }
 
   private void login(String username, String password) {
     wd.get("http://localhost/addressbook/index.php");
@@ -31,7 +31,7 @@ public class testContactCreation {
   }
 
   @Test
-    public void testContactCreation() {
+  public void testContactCreation() {
     initCreateContact();
     fillContacForm(new ContactData("test2", "test2", "test2", "123"));
     submitContactCreation();
@@ -66,16 +66,16 @@ public class testContactCreation {
   }
 
   @AfterMethod
-    public void tearDown() {
-        wd.quit();
-    }
+  public void tearDown() {
+    wd.quit();
+  }
 
-    public static boolean isAlertPresent(FirefoxDriver wd) {
-        try {
-            wd.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
+  public static boolean isAlertPresent(FirefoxDriver wd) {
+    try {
+      wd.switchTo().alert();
+      return true;
+    } catch (NoAlertPresentException e) {
+      return false;
     }
+  }
 }
