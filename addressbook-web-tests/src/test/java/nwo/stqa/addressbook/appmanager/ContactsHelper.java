@@ -5,33 +5,28 @@ import nwo.stqa.addressbook.model.ContactData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class ContactsHelper {
-  private FirefoxDriver wd;
+public class ContactsHelper extends BaseHelper {
 
   public ContactsHelper(FirefoxDriver wd) {
-    this.wd = wd;
+    super(wd);
   }
 
   public void submitContactCreation() {
-    wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
+    click(By.xpath("//div[@id='content']/form/input[21]"));
   }
 
   public void fillContacForm(ContactData contactData) {
-    wd.findElement(By.name("firstname")).click();
-    wd.findElement(By.name("firstname")).clear();
-    wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
-    wd.findElement(By.name("lastname")).click();
-    wd.findElement(By.name("lastname")).clear();
-    wd.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
-    wd.findElement(By.name("address")).click();
-    wd.findElement(By.name("address")).clear();
-    wd.findElement(By.name("address")).sendKeys(contactData.getAddress());
-    wd.findElement(By.name("mobile")).click();
-    wd.findElement(By.name("mobile")).clear();
-    wd.findElement(By.name("mobile")).sendKeys(contactData.getMobile());
+    click(By.name("firstname"));
+    type(By.name("firstname"), contactData.getFirstname());
+    click(By.name("lastname"));
+    type(By.name("lastname"), contactData.getLastname());
+    click(By.name("address"));
+    type(By.name("address"), contactData.getAddress());
+    click(By.name("mobile"));
+    type(By.name("mobile"),contactData.getMobile());
   }
 
   public void initCreateContact() {
-    wd.findElement(By.linkText("add new")).click();
+    click(By.linkText("add new"));
   }
 }
