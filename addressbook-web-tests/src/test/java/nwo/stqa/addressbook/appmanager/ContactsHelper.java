@@ -3,11 +3,11 @@ package nwo.stqa.addressbook.appmanager;
 
 import nwo.stqa.addressbook.model.ContactData;
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
 
 public class ContactsHelper extends BaseHelper {
 
-  public ContactsHelper(FirefoxDriver wd) {
+  public ContactsHelper(WebDriver wd) {
     super(wd);
   }
 
